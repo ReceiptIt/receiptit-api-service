@@ -1,0 +1,31 @@
+{
+  "name": "receiptit-api-service",
+  "description": "API service for ReceiptIt",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReceiptIt/receiptit-api-service.git"
+  },
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node --stack-size=65500 lib/index.js",
+    "debug": "node --inspect-brk=0.0.0.0:9229 lib/index.js",
+    "jshint": "eslint lib/* spec/unit/* spec/integration/* --cache",
+    "unit": "./node_modules/mocha/bin/_mocha -t 5000 spec/unit --recursive --trace",
+    "it": "./node_modules/mocha/bin/_mocha -t 60000 spec/integration --recursive"
+  },
+  "dependencies": {
+    "errr": "2.x",
+    "express": "4.x",
+    "preconditions": "2.x",
+    "request": "2.x",
+    "uuid": "3.1.x",
+    "cors": "2.x",
+    "cookie-parser": "1.x",
+    "log4js": "4.x"
+  },
+  "devDependencies": {}
+}
