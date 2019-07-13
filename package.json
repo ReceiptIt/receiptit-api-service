@@ -18,14 +18,17 @@
     "it": "./node_modules/mocha/bin/_mocha -t 60000 spec/integration --recursive"
   },
   "dependencies": {
+    "app-root-path": "^2.2.1",
+    "cookie-parser": "1.x",
+    "cors": "2.x",
     "errr": "2.x",
     "express": "4.x",
+    "log4js": "4.x",
+    "morgan": "^1.9.1",
     "preconditions": "2.x",
     "request": "2.x",
     "uuid": "3.1.x",
-    "cors": "2.x",
-    "cookie-parser": "1.x",
-    "log4js": "4.x"
+    "winston": "^3.2.1"
   },
   "devDependencies": {}
 }
