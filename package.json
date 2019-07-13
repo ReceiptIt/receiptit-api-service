@@ -33,10 +33,7 @@
     "preconditions": "2.x",
     "request": "2.x",
     "sequelize": "^5.9.4",
-<<<<<<< Updated upstream
     "sequelize-cli": "^5.5.0",
-=======
->>>>>>> Stashed changes
     "uuid": "3.1.x",
     "winston": "^3.2.1"
   },
