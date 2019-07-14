@@ -18,7 +18,7 @@ API Service
     
 ## API Endpoints    
 #### Authentication API
-- POST http://receipit-rest-api.herokuapp.com/auth/login
+- POST https://receipit-rest-api.herokuapp.com/auth/login
 ```$xslt
 Log in using email and password
 
@@ -36,7 +36,7 @@ Response:
 }
 ```
 
-- GET http://receipit-rest-api.herokuapp.com/auth/logout
+- GET https://receipit-rest-api.herokuapp.com/auth/logout
 ```$xslt
 Log out
 
