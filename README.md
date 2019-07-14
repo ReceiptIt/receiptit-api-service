@@ -17,6 +17,41 @@ API Service
     npm start
     
 ## API Endpoints    
+#### Authentication API
+- POST http://receipit-rest-api.herokuapp.com/auth/login
+```$xslt
+Log in using email and password
+
+POST http://receipit-rest-api.herokuapp.com/auth/login
+
+Payload:
+{"password":"213131","email":"testhjbawdjkda@test1.com"}
+
+Response:
+{
+    "result": "success",
+    "message": "User is logged in successfully",
+    "auth": true,
+    "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RoamJhd2Rqa2RhQHRlc3QxLmNvbSIsImlhdCI6MTU2MzE0NjQ0MCwiZXhwIjoxNTYzMTQ2NTI2fQ.L1mFGGkOUTEupbQSqt_hrGoeB7UPLo1yEo_isN5T76I"
+}
+```
+
+- GET http://receipit-rest-api.herokuapp.com/auth/logout
+```$xslt
+Log out
+
+GET http://receipit-rest-api.herokuapp.com/auth/logout
+
+Response:
+{
+    "result": "success",
+    "message": "User is logged out successfully",
+    "auth": false,
+    "authToken": null
+}
+```
+
+
 #### User API
 
 - GET https://receipit-rest-api.herokuapp.com/user/:userID
@@ -69,7 +104,9 @@ Response:
         "email": "test8@test1.com",
         "updatedAt": "2019-07-14T20:09:41.730Z",
         "createdAt": "2019-07-14T20:09:41.730Z"
-    }
+    },
+        "auth": true,
+        "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzIsImlhdCI6MTU2MzE0MzU2NywiZXhwIjoxNTYzMjI5OTY3fQ.XiMYpfuxokUNdluUhF49Liu5pTDaOKk_GgsONnfwDOQ"
 }
 ```
 
