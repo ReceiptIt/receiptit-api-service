@@ -1,6 +1,7 @@
+require('dotenv').config();
 const mysql = require("mysql2/promise");
 const env = process.env.NODE_ENV || "development";
-const dbConfig = require("../lib/db/config/database.json")[env];
+const dbConfig = require("../lib/db/config/database")[env];
 
 mysql.createConnection({
     host: dbConfig.host || "127.0.0.1",
