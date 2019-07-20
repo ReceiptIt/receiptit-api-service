@@ -271,6 +271,59 @@ Response:
 }
 ```
 
+#### Receipt Image API
+
+- POST https://receipit-rest-api.herokuapp.com/receipt/:receiptID/image
+
+Mandatory request body field: `image`
+```
+Upload a new receipt image
+
+POST https://receipit-rest-api.herokuapp.com/receipt/2/image
+
+Payload:
+{
+    "image": "A binary file, base64 data, or a URL for an image. (up to 10MB)"
+}
+
+Response:
+{
+    "result": "success",
+    "message": "Receipt image is uploaded successfully",
+    "imageInfo": {
+        "name": "receipt-2.jpeg",
+        "url": "https://receiptit-image.s3.ca-central-1.amazonaws.com/receipt-2.jpeg"
+    }
+}
+```
+
+- GET https://receipit-rest-api.herokuapp.com/receipt/:receiptID/image
+```$xslt
+Get the receipt image url given the receipt ID
+
+GET https://receipit-rest-api.herokuapp.com/receipt/2/image
+
+Response:
+{
+    "receipt_id": 2,
+    "image_name": "receipt-2.jpeg",
+    "image_url": "https://receiptit-image.s3.ca-central-1.amazonaws.com/receipt-2.jpeg"
+}
+```
+
+- Delete https://receipit-rest-api.herokuapp.com/receipt/:receiptID/image
+```$xslt
+Delete a receipt image by receipt ID
+
+DELETE https://receipit-rest-api.herokuapp.com/receipt/2/image
+
+Response:
+{
+    "result": "success",
+    "message": "Receipt image is deleted successfully"
+}
+```
+
 #### Product API
 - GET https://receipit-rest-api.herokuapp.com/product/:productID
 
