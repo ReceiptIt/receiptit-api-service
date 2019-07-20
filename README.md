@@ -169,7 +169,7 @@ Response:
 }
 ```
 
-- GET https://receipit-rest-api.herokuapp.com/receipt?userId=:userID
+- GET https://receipit-rest-api.herokuapp.com/receipt?userId=:userID&startDate=:startDate&endDate=:endDate
 ```$xslt
 Get all receipts belonging to one user
 
@@ -201,6 +201,24 @@ Response:
             "updatedAt": "2019-07-14T20:17:26.000Z"
         }
     ]
+}
+```
+
+- GET https://receipit-rest-api.herokuapp.com/receipt/expense?userId=1&startDate=:startDate&endDate:endDate
+```$xslt
+Retrieve total expense during a given period. 
+startDate and endDate supports the following format:
+YYYY, YYYY-MM, YYYY-MM-DD
+
+GET https://receipit-rest-api.herokuapp.com/receipt/expense?userId=1&startDate=2019-06&endDate=2019-08
+
+Response:
+
+{
+    "startDate": "2019-06-01T04:00:00Z",
+    "endDate": "2019-08-01T04:00:00Z",
+    "userId": 1,
+    "totalExpense": 8965.82
 }
 ```
 
