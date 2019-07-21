@@ -11,7 +11,8 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "start": "NODE_ENV=production npm run db:migration && node --stack-size=65500 lib/index.js",
+    "start": "npm run db:migration && node --stack-size=65500 lib/index.js",
+    "start:dev": "npm run db:migration && node --stack-size=65500 lib/index.js",
     "db:migration": "npm run db:pre-migrate && node_modules/.bin/sequelize db:migrate",
     "db:seeder": "node_modules/.bin/sequelize db:seed:all",
     "db:pre-migrate": "node scripts/createDB.js",
