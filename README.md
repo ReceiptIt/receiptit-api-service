@@ -428,6 +428,84 @@ Response:
 }
 ```
 
+- POST https://receipit-rest-api.herokuapp.com/product/batch
+
+```$xslt
+POST http://localhost:3050/product/batch
+
+Payload:
+{
+	"productList": [
+		{
+            "receipt_id": 2,
+            "name": "test1",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "10.20"
+        },
+        {
+            "receipt_id": 2,
+            "name": "test2",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "100.20"
+        },
+        {
+            "receipt_id": 2,
+            "name": "test3",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "100.20"
+        }
+	]
+}
+
+Response:
+{
+    "result": "success",
+    "message": "Products are created successfully",
+    "productInfo": [
+        {
+            "product_id": 1042,
+            "receipt_id": 2,
+            "name": "test1",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "10.20",
+            "createdAt": "2019-07-24T00:51:38.397Z",
+            "updatedAt": "2019-07-24T00:51:38.397Z"
+        },
+        {
+            "product_id": 1043,
+            "receipt_id": 2,
+            "name": "test2",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "100.20",
+            "createdAt": "2019-07-24T00:51:38.397Z",
+            "updatedAt": "2019-07-24T00:51:38.397Z"
+        },
+        {
+            "product_id": 1044,
+            "receipt_id": 2,
+            "name": "test3",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "100.20",
+            "createdAt": "2019-07-24T00:51:38.397Z",
+            "updatedAt": "2019-07-24T00:51:38.397Z"
+        }
+    ]
+}
+
+```
+
 - PUT https://receipit-rest-api.herokuapp.com/product
 
 Mandatory request body field: `receipt_id`, `product_id`
