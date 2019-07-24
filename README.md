@@ -544,3 +544,34 @@ Response:
     "message": "Product is deleted successfully"
 }
 ```
+#### Report API
+- GET https://receipit-rest-api.herokuapp.com/report/product?userId=:userId&startDate=:startDate&endDate:endDate
+
+```$xslt
+Get a product report during a given period. 
+startDate and endDate supports the following format:
+YYYY, YYYY-MM, YYYY-MM-DD
+
+GET https://receipit-rest-api.herokuapp.com/report/product?userId=1&startDate=2019-07-13&endDate=2019-07-13
+
+Response:
+{
+    "startDate": "2019-07-16T00:00:00Z",
+    "endDate": "2019-07-19T00:00:00Z",
+    "userId": 1,
+    "products": [
+        {
+            "product_id": 1,
+            "receipt_id": 1,
+            "name": "Apple",
+            "description": "Test_Description",
+            "quantity": 5,
+            "currency_code": "USD",
+            "price": "10.03",
+            "createdAt": "2019-07-17T21:16:24.000Z",
+            "updatedAt": "2019-07-17T21:16:24.000Z",
+            "purchase_date": "2019-07-17T21:17:00.000Z"
+        }
+    ]
+}
+```
